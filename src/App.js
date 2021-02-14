@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import Dropdown from "./Dropdown";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component{
+  defaultTitle = "Colors";
+  defaultValues = ["Red", "Black","Yellow", "Blue", "Grey", "Green"];
+  state={
+    searchable: true,
+    multiselect: true
+  }
+
+  onChange=(e)=>{
+    //console.log(e.target.value, e.target.checked);
+    this.setState({
+      [e.target.value]: e.target.checked
+    })
+  }
+
+  render(){
+    return(
+      <div className="App">
+        <div className="input">
+          <input type="checkbox" value="searchable" onChange={this.onChange} checked={this.state.searchable}/>
+          Searchable
+          <input type="checkbox" value="multiselect" onChange={this.onChange} checked={this.state.multiselect}/>
+          Multiselect
+        </div>
+        <Dropdown searchable={this.state.searchable} multiselect={this.state.multiselect} defaultTitle={this.defaultTitle} defaultValues={this.defaultValues}/>
+      </div>
+    )
+  }
 }
 
 export default App;
