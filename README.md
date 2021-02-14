@@ -1,6 +1,6 @@
 # Fynd - Assignment
 
-## Application URL - https://raginip08.github.io/Fynd/
+## Application URL - https://raginip08.github.io/Fynd/index.html
 
 ## Application code setup:
 1. Checkout master branch using git clone 
