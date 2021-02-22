@@ -1,4 +1,5 @@
-# Fynd - Assignment
+# Custom Dropdown
+A searchable and multiselect dropdown with custom checkboxes
 
 ## Application URL - https://raginip08.github.io/Fynd/index.html
 
